@@ -1,0 +1,128 @@
+<html>
+<head>
+<body bgcolor="#FAEBD7">
+<div style="text-align: center; padding: 15px; font-family: Arial, sans-serif;">
+        <a href="sitioweb.html" style="color: #8B0000; text-decoration: none;">Inicio</a> &nbsp;|&nbsp; 
+        <a href="Nosotros.html" style="color:#8B0000; text-decoration: none;">Nosotros</a> &nbsp;|&nbsp; 
+        <a href="Catalogo.html" style="color:#8B0000; text-decoration: none;">Cat&aacute;logo</a> &nbsp;|&nbsp; 
+      
+</div>
+<div style="padding: 30px; text-align; center;">
+<h1 style="color: #8B0000;"> NUESTRAS GALLETAS </h1>
+<p style="color:#8B0000; margin-bottom: 30px;"> Elegí tus favoritas y hacé tu pedido </p>
+
+</div>
+
+
+<!-- CONTENEDOR DE GALLETAS -->
+<div style="text-align: center; margin-bottom: 20px;">
+
+  <!-- Galleta 1: Frutos Secos -->
+  <div style="display: inline-block; width: 220px; background-color: #ffffff; padding: 15px; margin: 10px; border: 3px solid #DEB887; border-radius: 10px; vertical-align: top; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <img src="frutossecos.jpeg" width="100%" style="border-radius: 8px; height: 150px; object-fit: cover;">
+    <p style="font-weight: bold; color: #8B0000; margin: 10px 0 0 0;">Frutos Secos</p>
+  </div>
+
+  <!-- Galleta 2: Barrita -->
+  <div style="display: inline-block; width: 220px; background-color: #ffffff; padding: 15px; margin: 10px; border: 3px solid #DEB887; border-radius: 10px; vertical-align: top; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <img src="barrita.jpeg" width="100%" style="border-radius: 8px; height: 150px; object-fit: cover;">
+    <p style="font-weight: bold; color: #8B0000; margin: 10px 0 0 0;">Barrita</p>
+  </div>
+
+  <!-- Galleta 3: Dulce de Leche -->
+  <div style="display: inline-block; width: 220px; background-color: #ffffff; padding: 15px; margin: 10px; border: 3px solid #DEB887; border-radius: 10px; vertical-align: top; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <img src="dulcedeleche.jpeg" width="100%" style="border-radius: 8px; height: 150px; object-fit: cover;">
+    <p style="font-weight: bold; color: #8B0000; margin: 10px 0 0 0;">Dulce de Leche</p>
+  </div>
+
+  <!-- Galleta 4: Frutos Rojos -->
+  <div style="display: inline-block; width: 220px; background-color: #ffffff; padding: 15px; margin: 10px; border: 3px solid #DEB887; border-radius: 10px; vertical-align: top; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <img src="frutosrojos.jpeg" width="100%" style="border-radius: 8px; height: 150px; object-fit: cover;">
+    <p style="font-weight: bold; color: #8B0000; margin: 10px 0 0 0;">Frutos Rojos</p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- SECCIÓN DE PEDIDOS CON ENVÍO A WHATSAPP -->
+<div style="width: 85%; max-width: 900px; margin: 30px auto; background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-align: left; font-family: Arial, sans-serif; clear: both;">
+  <h2 style="text-align: center; color: #8B0000; margin-top: 0;">Haz tu Pedido</h2>
+  
+  <form id="formPedido" onsubmit="enviarWhatsApp(event)">
+    
+    <!-- Nombre y Galleta en una sola línea -->
+    <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+      <div style="flex: 1;">
+        <label for="nombre" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      </div>
+
+      <div style="flex: 1;">
+        <label for="producto" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Galleta elegida:</label>
+        <select id="producto" name="producto" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background-color: white; box-sizing: border-box;">
+          <option value="Frutos Secos">Frutos Secos</option>
+          <option value="Barrita">Barrita</option>
+          <option value="Dulce de Leche">Dulce de Leche</option>
+          <option value="Frutos Rojos">Frutos Rojos</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Cantidad y Unidad de Medida en otra línea -->
+    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+      <div style="flex: 1;">
+        <label for="cantidad" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" value="1" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+      </div>
+      
+      <div style="flex: 1;">
+        <label for="unidad" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Unidad de medida:</label>
+        <select id="unidad" name="unidad" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background-color: white; box-sizing: border-box;">
+          <option value="unidades">Unidades</option>
+          <option value="docenas">Docenas</option>
+          <option value="paquetes">Paquetes</option>
+          <option value="gramos">Gramos (g)</option>
+          <option value="kilos">Kilos (kg)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Botón de enviar -->
+    <button type="submit" style="width: 100%; padding: 12px; background-color: #8B0000; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer;">
+      Enviar Pedido por WhatsApp
+    </button>
+
+  </form>
+</div>
+
+<!-- Script para conectar con WhatsApp -->
+<script>
+  function enviarWhatsApp(event) {
+    event.preventDefault(); // Evita que la página se recargue
+
+    // Capturar los valores del formulario
+    let nombre = document.getElementById('nombre').value;
+    let producto = document.getElementById('producto').value;
+    let cantidad = document.getElementById('cantidad').value;
+    let unidad = document.getElementById('unidad').value;
+
+    // Tu número de WhatsApp (con código de país 54 y código de área sin 0 ni 15, ajustado para Mendoza)
+    let telefono = "5492634635720";
+
+    // Crear el mensaje ordenado
+    let mensaje = `Hola! Quiero hacer un pedido:%0A` +
+                  `- Nombre: ${nombre}%0A` +
+                  `- Producto: ${producto}%0A` +
+                  `- Cantidad: ${cantidad} ${unidad}`;
+
+    // Abrir WhatsApp con el mensaje listo
+    window.open(`https://api.whatsapp.com/send?phone=${telefono}&text=${mensaje}`, '_blank');
+  }
+</script>
